@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DIC cafe</title>
+    <link href="css/normalize.css" rel="stylesheet">
+      <link href="css/board.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <section class="section_inner">
+      <div class="section_title">
+        <h1>BOARD</h1>
+        <p>掲示板</p>
+      </div>
+      <form action="create" method="POST">
+        <table class="contact">
+          <tr class="contact_line">
+            <th class="contact_sign">ポイント</th>
+            <td>
+              <input type="radio" name="point" value="1" checked="checked">1
+              <input type="radio" name="point" value="2">2
+              <input type="radio" name="point" value="3">3
+              <input type="radio" name="point" value="4">4
+              <input type="radio" name="point" value="5">5
+            </td>
+          </tr>
+          <tr class="contact_content">
+            <th class="contact_sign">comment</th>
+            <td class="contact_input"><textarea name="comment" value=""></textarea></td>
+          </tr>
+        </table>
+        <div class="contact_btn_area">
+          <input type="reset" class="contact_btn reset_btn" value="reset">
+          <input type="submit" class="contact_btn submit_btn" value="送信する">
+        </div>
+      </form>
+    </section>
+    <section class="section_inner post_area">
+      <% @posts.each do |post| %>
+        <p class="post_item"><%= post %></p>
+      <% end %>
+    </section>
+  </body>
+</html>
